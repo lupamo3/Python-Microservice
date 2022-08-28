@@ -27,7 +27,7 @@ services:
     environment:
       MYSQL_DATABASE: admintestdb
       MYSQL_PASSWORD: Admin123456/
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: Admin123456/
     volumes:
       - .dbdata:/var/lib/mysql
     ports:

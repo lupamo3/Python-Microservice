@@ -9,6 +9,7 @@ from producer import publish
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:Admin123456/@db/adminmaindb'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 CORS(app)
 
 db = SQLAlchemy(app)
