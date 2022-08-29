@@ -11,7 +11,7 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Flask Lead Creation and Customer Creation API</h3>
+  <h3 align="center">Python-Microservices Project</h3>
 </p>
 
 
@@ -19,25 +19,30 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-An application that allows users to create leads, create customers, view leads, edit leads, edit their customers, view customers.
+An application that allows users to Like Products, Query Products, Products CRUDL, User CRUD, Using RabbitMQ for queuing.
+
+Still finalizing on the react front end, it should be ready for testing by 30th August.
 
 .
 
-Here are some of the features:
+<!-- Here are some of the features:
 * Create Leads
 * Create Customers
 * Edit Leads
 * View Users
 * Edit their profiles
-* It has implemented DRY principles  :smile:
+* It has implemented DRY principles  :smile: -->
 
 
 
 ### Built With
 
+* [Docker](https://www.docker.com/)
+* [RabbitMQ](https://www.rabbitmq.com/)
+* [Django](https://www.djangoproject.com/)
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 * [Python](https://www.python.org/)
-* [PostgresQl](https://www.postgresql.org/)
+* [MySQL](MySQLhttps://www.mysql.com)
 
 
 
@@ -59,34 +64,39 @@ This is an example of how to list things you need to use the software and how to
 1. Access Github [https://github.com](https://github.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/lupamo3/flask-rest-api.git
+   git clone https://github.com/lupamo3/Python-Microservice.git
    ```
-3. Change directory into the flask-rest-api directory :
+3. Change directory into the Admin or Main :
    ```sh
-   cd flask-rest-api
+   cd Main
+   cd Admin
    ```
-4. Create and activate your virtual environment :
+4. Run the docker container :
 
    ```sh
-   Virtual venv python=[Python-Version]
-   Pip install auto-env
+   docker-compose up
    ```
-5. Install Project Requirements
+5. Install Project Requirements or to make changes
 ```sh
-pip install -r requirements.txt
+docker-compose build
 ```
-6. Run the application
+6. Pull Rabbitmql
 ```sh
-flask run
+docker pull rabbitmq3:management
+```
+
+7. All the ENV variables are in the application for ease of testing, but replace the rabbitmqurl with your AMQP url
+```sh
+(enter_amqpurl_)
 ```
 
 ### Test the application on Postman
 ## Test The API end-points
- - Run [CertificateTest](https://farifu-flask.herokuapp.com/) on your postman to test the URLs
+ - Test this URLs on Postman
 
 or use:
 
-| URL                                 | METHOD                 | MESSAGE                                |
+<!-- | URL                                 | METHOD                 | MESSAGE                                |
 | ------------------------------------|:----------------------:| --------------------------------------:|
 |/api/users/register                  | POST                   | Create a leads/customer admin.         |
 |/api/users/login                     | POST                   | Login to profile.                      |
@@ -96,7 +106,7 @@ or use:
 |/api/leads/create                    | POST                   | Create a lead record                   |
 |/api/leads/all                       | GET                    | View all leads.                        |
 |/api/customer/create                 | POST                   | Create a Customer   .                  |
-|/api/customer/all                    | GET                    | Get all customers                      |  
+|/api/customer/all                    | GET                    | Get all customers                      |   -->
 
 
 
@@ -107,6 +117,7 @@ or use:
 - **Feel free to reach me via email and to fork this project**
     - Any feedback would be appreciated.
     - The Pull requests have bit by bit application documentation
+    - Finalizing on the REACT frontend to be attached here
 
 
 <!-- CONTRIBUTING -->
@@ -133,6 +144,6 @@ Contributions are what make the open source community such an amazing place to b
 
 Your Name - [@nlanjichi](https://twitter.com/nlanjichi)
 
-Project Link: [https://github.com/lupamo3/flask-crud/tree/master](https://github.com/lupamo3/flask-crud/tree/master)
+Project Link: [https://github.com/lupamo3/Python-Microservice.git](https://github.com/lupamo3/Python-Microservice.git)
 
 
