@@ -21,7 +21,7 @@
 
 An application that allows users to Like Products, Query Products, Products CRUDL, User CRUD, Using RabbitMQ for queuing.
 
-Still finalizing on the react front end, it should be ready for testing by 30th August.
+The React Frontend is Accessible on https://github.com/lupamo3/react-frontend.git
 
 .
 
