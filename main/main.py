@@ -8,7 +8,7 @@ import requests
 from producer import publish
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:Admin123456/@db/adminmaindb'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:root@db:3306/adminmaindbse'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 CORS(app)
 

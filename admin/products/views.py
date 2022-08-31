@@ -1,10 +1,13 @@
-from rest_framework import viewsets, status
+from django.contrib.auth import login, logout
+
+from rest_framework import viewsets, status, permissions, views
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.generics import RetrieveAPIView
 
 from .models import Product, User
 from .producer import publish
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer, LoginSerializer, UserSerializer
 import random
 
 
@@ -43,8 +46,33 @@ class ProductViewSet(viewsets.ViewSet):
 
 class UserAPIView(APIView):
     def get(self, _):
-        users = User.objects.all()
+        users = [{"id": 8},{"id": 2},{"id": 3},{"id": 4},{"id": 5},{"id": 6}, {"id": 1}]
+        # User.objects.all()
         user = random.choice(users)
         return Response({
-            'id': user.id
+            'id': user['id']
         })
+
+class LoginView(APIView):
+    # This view should be accessible also for unauthenticated users.
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request, format=None):
+        serializer = LoginSerializer(data=self.request.data,
+            context={ 'request': self.request })
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data['user']
+        login(request, user)
+        return Response(None, status=status.HTTP_202_ACCEPTED)
+
+class LogoutView(views.APIView):
+
+    def post(self, request, format=None):
+        logout(request)
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
+class ProfileView(RetrieveAPIView):
+    serializer_class = UserSerializer
+
+    def get_object(self):
+        return self.request.user
