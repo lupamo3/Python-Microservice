@@ -89,10 +89,21 @@ docker pull rabbitmq3:management
 ```sh
 (enter_amqpurl_)
 ```
+8. To run the tests
+```sh
+run
+(docker-compose exec ** sh)
+then run 
+(./manage.py test)
+```
+9. To check if all containers are running
+```sh
+(docker-compose -a)
+```
 
 ### Test the application on Postman
 ## Test The API end-points
- - Test this URLs on Postman
+ - Test this URLs on [Postman](https://go.postman.co/workspace/python~5917c79c-00cc-4fa9-b53f-9ae81fda6983/collection/4927537-83fec7cb-0f84-42fc-ac99-832aa3c2730a?action=share&creator=4927537)
 
 or use:
 
